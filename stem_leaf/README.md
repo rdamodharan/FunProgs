@@ -25,15 +25,15 @@ This module handles negative numbers too.
 ```erlang
 > List2 = lists:map(fun (_) -> random:uniform(100) end, lists:seq(1,10,1)) ++ lists:map(fun (_) -> -random:uniform(100) end, lists:seq(1,10,1)).
 [19,9,96,14,24,42,43,36,64,52,-43,-57,-30,-18,-48,-26,-28,-94,-67,-81]
-> stem_leaf:plot(List2).
+> stem_leaf:plot(List2).                                                                                                                        
    -9|4
    -8|1
    -7|
    -6|7
    -5|7
    -4|83
-   -3|
-   -2|1086
+   -3|0
+   -2|86
    -1|8
    -0|
     0|9
@@ -46,4 +46,5 @@ This module handles negative numbers too.
     7|
     8|
     9|6
+ok
 ```

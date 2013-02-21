@@ -18,7 +18,7 @@ print_stem(N) when N < 0 ->
 print_stem(N) ->
     io:format("~5B|", [N div 10 - 1]).
 
-plot_leaf([H|T], Bucket) when is_integer(H) andalso H < Bucket -> 
+plot_leaf([H|T], Bucket) when is_integer(H) andalso H =< Bucket -> 
     io:format("~w", [leaf(H, Bucket)]), plot_leaf(T, Bucket);
 plot_leaf([H|T], Bucket) when is_integer(H) -> 
     io:format("~n"), plot_stem([H|T], Bucket+10);
