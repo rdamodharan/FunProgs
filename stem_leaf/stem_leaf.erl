@@ -29,7 +29,7 @@ plot_stem(Data, Bucket) ->
     print_stem(Bucket),
     plot_leaf(Data, Bucket).
 
-plot_sorted([H | T]) -> plot_stem([H | T], bucket(H)).
+plot_sorted(Data) -> plot_stem(Data, bucket(hd(Data))).
 
 plot([]) -> io:format("~n");
 plot(Data) when is_list(Data) -> plot_sorted(lists:sort(Data)).
