@@ -51,8 +51,8 @@ int main(int argc, char **argv)
         }
     }
     while((n = getline(&str, &str_size, f)) != -1) {
-        if(str[n-1] == '\n') str[n-1] = '\0';
-        reverse_words(str, str+n-2);
+        if(str[n-1] == '\n') { str[n-1] = '\0'; n--; };
+        reverse_words(str, str+n-1);
         printf("%s\n", str);
     }
     fclose(f);
